@@ -4,6 +4,7 @@ import time
 import pygame
 pygame.init()
 
+# adjusting width and height
 WIDTH, HEIGHT = 800, 600
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
