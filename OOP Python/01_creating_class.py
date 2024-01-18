@@ -4,7 +4,7 @@ class Employee:
         self.last = last
         self.pay = pay
         self.email = first + "." + last + "@company.com"
-        self.fullname = first + " " + last
+        self.fullname = first + " " + last #this method can be separated using new function
     pass
 
 #creating two different instances of the above class

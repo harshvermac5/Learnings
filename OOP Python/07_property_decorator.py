@@ -3,13 +3,12 @@ class Employee:
         self.first = first
         self.last = last
         self.pay = pay
-        #self.email = first + "." + last + "@company.com"
-        #self.fullname = first + " " + last #this method can be separated using new function
-    
+       
     @property
     def email(self):
         return "{}.{}@company.com".format(self.first, self.last)
     
+    @property
     def fullname(self):
         return "{} {}".format(self.first, self.last)
     
@@ -18,13 +17,14 @@ class Employee:
         first, last = name.split(" ")
         self.first = first
         self.last = last
-    
-    def __add__(self, other):
-        return self.pay + other.pay
-    
-    def __len__(self):
-        return len(self.fullname())
 
+    @fullname.deleter
+    def fullname(self):
+        print("Deleted the Name!")
+        self.first = None
+        self.last = None
+    
+    
 #creating two different instances of the above class
 emp_1 = Employee("Harsh", "Verma", 25000)
 emp_2 = Employee("Test", "Experiment", 10000)
@@ -32,6 +32,10 @@ emp_2 = Employee("Test", "Experiment", 10000)
 #adding @property enables the access to email as the attribute of parent class
 print(emp_1.email)
 
-emp_1.fullname = "Aman Rajc"
+emp_1.fullname = "Aman Raj"
 
 print(emp_1.email)
+
+del emp_1.fullname
+
+print(emp_1.fullname)
