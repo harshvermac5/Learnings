@@ -14,3 +14,5 @@ if sum_pwr == num:
     print(f"{num} is an Armstrong number.")
 else:
     print(f"{num} is not an Armstrong number.")
+
+#Armstrong numbers are those whose sum of the values of each digit, raised to the power of the number's length, results in the original number.

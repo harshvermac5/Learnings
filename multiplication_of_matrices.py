@@ -1,8 +1,7 @@
 def multiply_matrices(mat1, mat2):
-    row1 = len(mat1)
-    col1 = len(mat1[0])
-    row2 = len(mat2)
-    col2 = len(mat2[0])
+
+    #assigning values
+    row1, col1, row2, col2 = len(mat1), len(mat1[0]), len(mat2), len(mat2[0])
 
     if col1 != row2:
         return "Matrix multiplication not possible"

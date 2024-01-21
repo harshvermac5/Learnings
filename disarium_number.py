@@ -11,3 +11,5 @@ try:
         print(f"{num} is not Disarium.")
 except ValueError:
     print("Input a Valid Number.")
+
+#Disarium number are number whose sum of its digits are raised to its respective position is equal to digit itself.
