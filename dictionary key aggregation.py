@@ -10,18 +10,23 @@ loot = {
 }
 
 #to update the old dict with new values
-inv.update(loot)
+#inv.update(loot)
+#
+##to add up to the old values
+#new_inv = {
+#    k: inv.get(k,0) + loot.get(k,0) \
+#   for k in set(inv | loot)
+#}
+#
+#print(new_inv)
+#
+##another approach to solve above problem
+#for key in loot:
+#    inv[key] = inv.get(key,0)  + loot[key]
+#
+#print(inv)
 
-#to add up to the old values
-new_inv = {
-    k: inv.get(k,0) + loot.get(k,0) \
-   for k in set(inv | loot)
-}
+from collections import Counter
+new_inv_2 = dict(Counter(inv) + Counter(loot))
 
-print(new_inv)
-
-#another approach to solve above problem
-for key in loot:
-    inv[key] = inv.get(key,0)  + loot[key]
-
-print(inv)
+print(new_inv_2)
