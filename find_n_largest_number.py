@@ -10,3 +10,5 @@ N = int(input(f"Number upto: "))
 result = n_largest(sample, N)
 
 print(result)
+
+#sorting can be reversed to implement the descending counting

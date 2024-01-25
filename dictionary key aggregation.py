@@ -27,6 +27,7 @@ loot = {
 #print(inv)
 
 from collections import Counter
+
 new_inv_2 = dict(Counter(inv) + Counter(loot))
 
 print(new_inv_2)

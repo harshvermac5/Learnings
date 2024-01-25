@@ -9,6 +9,6 @@ def is_pronic(num):
 ent = int(input("Enter the number to check: "))
 
 if is_pronic(ent):
-    print(f"Yes {ent} is Pronic.")
+    print(f"Yes, {ent} is Pronic.")
 else:
     print(f"Nope, {ent} is not Pronic.")

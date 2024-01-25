@@ -11,3 +11,5 @@ if is_harshad(check):
     print(f"{check} is a Harshad number.")
 else:
     print(f"{check} is not a Harshad number.")
+
+#harshad number are that who is divisible by the sum of its digit
