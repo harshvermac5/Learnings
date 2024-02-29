@@ -1,7 +1,9 @@
 import random
 
+# asking the user for the maximum number in range
 top_of_range = input("Type a number: ")
 
+# confirming whether the input is valid number or not
 if top_of_range.isdigit():
     top_of_range = int(top_of_range)
 
@@ -13,6 +15,7 @@ else:
     print("Please type a number next time.")
     quit()
 
+# selecting a number 
 random_number = random.randint(0, top_of_range)
 
 guesses = 0
