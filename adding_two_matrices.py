@@ -12,7 +12,7 @@ def add_matrices(mat1, mat2):
     return result
 
 
-#for example:
+#example:
 
 matrix1 = [
     [1,2,3],
