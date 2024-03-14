@@ -32,30 +32,34 @@ def wpm_test(stdscr):
 
         stdscr.clear() # clears the screen
         display_text(stdscr, target_text, current_text, wpm) # initialise the display_text function
-        stdscr.refresh()
+        stdscr.refresh() # refreshes the screen
 
-        if "".join(current_text) == target_text:
-            stdscr.nodelay(False)
+        if "".join(current_text) == target_text: # checks whether the entered text is equals to target text
+            stdscr.nodelay(False) # if yes, then stop the the capturing of the key and break out of loop
             break
 
+        # to continue the program running, even in the case of no input is provided
         try:
             key = stdscr.getkey()
         except KeyboardInterrupt:
             break
         
-        if ord(key) == 27:
+        if ord(key) == 27: # 27 is ASCII for Escape, if pressed break the loop
             break
+        # delete the last word, if backspace or delete key is pressed
         if key in ("KEY_BACKSPACE", '\b', '\x7f'):
             if len(current_text) > 0:
                 current_text.pop()
+        # limiting the entry of user input to the target text, to save from index out of range error
         elif len(current_text) < len(target_text):
             current_text.append(key)
 
 # function to display the target text which is explained previously in wpm test
 def display_text(stdscr, target, current, wpm=0):
     stdscr.addstr(target)
-    stdscr.addstr(1, 0, f"WPM: {wpm}")
+    stdscr.addstr(1, 0, f"WPM: {wpm}") # setting the coordinates to display, from 2nd line (1 as index) and from the first character (0 as index)
 
+    # changing the color of the text, depending on correct or incorrect input
     for i, char in enumerate(current):
         correct_char = target[i]
         color = curses.color_pair(1)
@@ -63,6 +67,7 @@ def display_text(stdscr, target, current, wpm=0):
             color = curses.color_pair(2)
         stdscr.addstr(0, i, char, color)
 
+# main function with color and program attributes stored
 def main(stdscr):
     curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
     curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
@@ -73,7 +78,7 @@ def main(stdscr):
         wpm_test(stdscr)
         stdscr.addstr(2, 0, "You completed the test, Press any key to continue...")
         stdscr.refresh()
-        stdscr.getkey()
-        break  # Add a condition to exit the loop
-
+        stdscr.getkey() # asking user to exit the loop
+        break
+# initialising the curses enviroment
 wrapper(main)
