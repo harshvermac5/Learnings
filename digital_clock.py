@@ -5,6 +5,7 @@ window = tk.Tk()
 window.title("Digital Clock")
 window.geometry("640x320")
 
+# function to display time
 def time():
     string = strftime("%H:%M:%S\n%D")
     label.config(text=string)
