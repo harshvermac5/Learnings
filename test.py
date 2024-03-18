@@ -1,11 +1,7 @@
-import sys
+from tqdm import tqdm
 import time
 
-print("Downloading file...", end='', flush=False)
-
-# Simulating file download progress
-for i in range(10):
-    print(".", end='', flush=False)
-    time.sleep(1)
-
-print("\nDownload complete!")
+# Iterate over a list with tqdm
+my_list = [1, 2, 3, 4, 5]
+for item in tqdm(my_list):
+    time.sleep(0.5)  # Simulate some work
