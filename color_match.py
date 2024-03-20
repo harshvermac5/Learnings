@@ -6,7 +6,7 @@ CODE_LENGTH = 4
 
 # generates the secret code with items of the above list
 def generate_code():
-    code = {}
+    code = {} # curly brackets creates set, which contains no duplicates
 
     for _ in range(CODE_LENGTH):
         color = random.choice(COLORS)
