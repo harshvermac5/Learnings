@@ -12,6 +12,7 @@ if top_of_range.isdigit():
         quit()
 
 else:
+    # printing the statement
     print("Please type a number next time.")
     quit()
 
