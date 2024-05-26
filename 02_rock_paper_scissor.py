@@ -3,6 +3,9 @@ import random
 user_wins = 0
 computer_wins = 0
 
+print("This is Rock paper Scissor game.")
+print("I WELCOME YOU here.")
+
 options = ["r", "p", "s", "t"]
 
 while True:
@@ -34,3 +37,5 @@ while True:
 print(f"You won {user_wins} times.")
 print(f"The Computer won {computer_wins} times.")
 print("Adios!")
+
+print("I Love You, Thank Youu For using it.")
